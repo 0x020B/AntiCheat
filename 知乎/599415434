@@ -9,7 +9,7 @@ with open(__file__, 'rb') as self:
             flag = False
     except ValueError:
         with open(__file__, 'a+') as self:
-            self.write(str(uuid.getnode()))
+            self.write("#" + str(uuid.getnode()))
 if flag:
     print("我承诺本题独立完成，无任何抄袭行为")
 else:
