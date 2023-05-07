@@ -1,16 +1,15 @@
 import uuid
-flag = True
 with open(__file__, 'rb') as self:
     self.seek(-15, 2)
     _ = self.read().decode()
     try:
         int(_)
         if str(uuid.getnode()) != _:
-            flag = False
+            _ = False
     except ValueError:
         with open(__file__, 'a+') as self:
-            self.write("#" + str(uuid.getnode()))
-if flag:
+            self.write("# " + str(uuid.getnode()))
+if _:
     print("我承诺本题独立完成，无任何抄袭行为")
 else:
     print("我承认本题非独立完成，且存在抄袭行为")
