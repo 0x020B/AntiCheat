@@ -1,4 +1,19 @@
-print("我承诺本题独立完成，无任何抄袭行为")
+import uuid
+flag = True
+with open(__file__, 'rb') as self:
+    self.seek(-15, 2)
+    _ = self.read().decode()
+    try:
+        int(_)
+        if str(uuid.getnode()) != _:
+            flag = False
+    except ValueError:
+        with open(__file__, 'a+') as self:
+            self.write(str(uuid.getnode()))
+if flag:
+    print("我承诺本题独立完成，无任何抄袭行为")
+else:
+    print("我承认本题非独立完成，且存在抄袭行为")
 print("学号：{}，姓名：{}".format(学号, 姓名))
 字母 = input("请输入构成圣诞树树冠的字母：")
 高度 = int(input("请输入构成圣诞树树干的高度："))
